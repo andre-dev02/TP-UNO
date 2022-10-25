@@ -4,7 +4,7 @@ O melhor jogo de Uno já criado.
 
 Neste trabalho, os discentes devem formar grupos de 4 ou 5 pessoas.
 Objetiva-se o desenho e implementação de um projeto de software de pequeno/médio
-porte. Devemos, para alcançar nossos objetivos, aplicar os conhecimentos adiquiridos
+porte. Devemos, para alcançar nossos objetivos, aplicar os conhecimentos adquiridos
 durante a disciplina.
 O grupo deve selecionar um problema de seu interesse, e realizar o completo processo
 de desenvolvimento de um sistema de médio porte. Tal processo compreende a análise, o
