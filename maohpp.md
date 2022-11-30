@@ -208,7 +208,8 @@ while (p != NULL && (p->c.cor != c.cor ) ) { //verificar o numero
 
 ## Criar_Mao
 
-Função responsável por tirar a carta do baralho e coloca na mão dos jogadores e tira o elemento da pilha e coloca na lista.
+Função responsável por tirar a carta do baralho e colocar na mão dos jogadores.
+Ela também tira o elemento da pilha e coloca na lista.
 
 Progama:
 ```Mao* criar_mao(pilha *baralho, Mao *jogador) { //tira a carta do baralho e coloca na mao dos jogadores e tira o elemento da pilha e coloca na lista
