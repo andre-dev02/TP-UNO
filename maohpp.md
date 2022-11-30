@@ -66,7 +66,7 @@ Mao* insere (Mao* l, carta c){ // insere a carta na mao "
 
 ## Vazia
 
-Função responsável para verificar se a mão do jogador está vazia, caso esteja ele vence a partida.
+Função responsável por verificar se a mão do jogador está vazia, caso esteja ele vence a partida.
 
 #
  
@@ -84,7 +84,7 @@ int vazia (Mao* l) {//verifica se a mao ta vazia, se sim o jogador vence a parti
 
 ## Imprime
 
-Função responsável para mostrar as cartas do jogador. Observação: No TP foi utilizado a tabela ASCII para ser usado os caracteres nas cartas especiais,
+Função responsável por mostrar as cartas do jogador. Observação: No TP foi utilizado a tabela ASCII para ser usado os caracteres nas cartas especiais,
 exemplo de como foi a transformação dos caracteres (+, M, R, T, B)
 
 #
@@ -120,7 +120,7 @@ void imprime (Mao* l) { //mostra as cartas do jogador
 
 ## Tamanho
 
-Função responsável para contar e mostrar na tela quantas cartas o jogador possui.
+Função responsável por contar e mostrar na tela quantas cartas o jogador possui.
 Caso esteja com 0 é impresso uma imagem da vitória.
 
 #
@@ -159,8 +159,8 @@ int tamanho(Mao* l, int id) { // Conta e mosta na tela quantas cartas o jogador 
 
 ## Acao
 
-Função responsável para acionar o "come 2" e o "come 4", caso o jogador receba uma dessas cartas especiais,
-é retirado do baralho e inserido na mão desse jogador
+Função responsável por acionar o "come 2" e o "come 4", caso o jogador receba uma dessas cartas especiais,
+é retirado do baralho e inserido na mão desse jogador.
 
 #
  
@@ -190,8 +190,8 @@ Mao* acao(pilha *baralho, Mao *jogador,int numero){ // Se o numero for 43 ou 77 
 
 ## RetiraCarta
 
-Função responsável para verificar a jogada, caso o jogador tenha jogado a carta errada
-é informado na tela uma mensagem, ele perde a vez de jogar e a mesa pega a carta de volta
+Função responsável por verificar a jogada, caso o jogador tenha jogado a carta errada
+é informado na tela uma mensagem, ele perde a vez de jogar e a mesa pega a carta de volta.
 
 #
  
