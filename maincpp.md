@@ -54,7 +54,7 @@ void jogar (pilha *baralho, pilha *mesa, Mao *jogador1, Mao *jogador2, int vez){
 
 #
 
-Em segundo lugar, é impresso na tela a vez do jogador jogar a carta, e a partir dessa escolha é computado a jogada
+Em segundo lugar, é impresso na tela a vez do jogador jogar a carta, e, a partir dessa escolha, é computado a jogada
 
 #
  
@@ -104,7 +104,7 @@ cout << endl << endl << "ESCOLHA UMA CARTA PARA JOGAR: ";
 ```
 #
 
-E por fim, é impresso as mesmas coisas só que agora para o jogador 2.
+E, por fim, é impresso as mesmas coisas só que agora para o jogador 2.
 
 #
  
@@ -183,7 +183,7 @@ Progama:
 
 ### Main
 
-Função main, responsável para imprimir a interface do menu, iniciar a mesa, o baralho, a mão do jogador 1, a mão do jogador 2
+Função main, responsável por imprimir a interface do menu, iniciar a mesa, o baralho, a mão do jogador 1, a mão do jogador 2
 e possibilitar opções para os jogadores escolherem (Jogar, Sair, Ajuda).
 
 #
