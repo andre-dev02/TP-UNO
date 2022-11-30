@@ -6,7 +6,7 @@ Este arquivo contém todo o código usado em mao.hpp destrinchado, o mao hpp é 
 - [Vazia](#vazia)
 - [Imprime](#imprime)
 - [Tamanho](#tamanho)
-- [Ação](#acao)
+- [Acao](#acao)
 - [Retiracarta](#retiracarta)
 - [Criar_mao](#criar_mao)
 
@@ -21,7 +21,8 @@ A struct foi utilizada para armazenar as cartas da mão do jogador.
 ### Exemplo no cógido:
 
 Progama:
-```struct mao { //mao do jogador
+```
+struct mao { //mao do jogador
     carta c;
     struct mao* prox;
 };
@@ -38,7 +39,8 @@ Função responsável por inicializar a mão do jogador.
 ### Exemplo no cógido:
 
 Progama:
-```Mao* inicializa (void){
+```
+Mao* inicializa (void){
  return NULL;
 }
 ```
@@ -53,7 +55,8 @@ não funcionava no compilador que estávamos usando, ele deixava um "leak" na me
 ### Exemplo no cógido:
 
 Progama:
-```Mao* insere (Mao* l, carta c){ // insere a carta na mao "
+```
+Mao* insere (Mao* l, carta c){ // insere a carta na mao "
  Mao* novo = (Mao*) malloc(sizeof(Mao));
  novo->c = c;
  novo->prox = l;
@@ -70,7 +73,8 @@ Função responsável para verificar se a mão do jogador está vazia, caso este
 ### Exemplo no cógido:
 
 Progama:
-```int vazia (Mao* l) {//verifica se a mao ta vazia, se sim o jogador vence a partida
+```
+int vazia (Mao* l) {//verifica se a mao ta vazia, se sim o jogador vence a partida
  if (l == NULL) {
  return 1;
  }else
@@ -88,7 +92,8 @@ exemplo de como foi a transformação dos caracteres (+, M, R, T, B)
 ### Exemplo no cógido:
 
 Progama:
-```void imprime (Mao* l) { //mostra as cartas do jogador
+```
+void imprime (Mao* l) { //mostra as cartas do jogador
  Mao* p;
  for (p = l; p != NULL; p = p->prox) {
         if (p->c.numero == 66) {
@@ -123,7 +128,8 @@ Caso esteja com 0 é impresso uma imagem da vitória.
 ### Exemplo no cógido:
 
 Progama:
-```int tamanho(Mao* l, int id) { // Conta e mosta na tela quantas cartas o jogador tem
+```
+int tamanho(Mao* l, int id) { // Conta e mosta na tela quantas cartas o jogador tem
     int cont=0;
    
     Mao* p;
@@ -151,7 +157,7 @@ Progama:
 }
 ```
 
-## Ação
+## Acao
 
 Função responsável para acionar o "come 2" e o "come 4", caso o jogador receba uma dessas cartas especiais,
 é retirado do baralho e inserido na mão desse jogador
@@ -161,7 +167,8 @@ Função responsável para acionar o "come 2" e o "come 4", caso o jogador receb
 ### Exemplo no cógido:
 
 Progama:
-```Mao* acao(pilha *baralho, Mao *jogador,int numero){ // Se o numero for 43 ou 77  entra na funcao das cartas "+2" e "+4"
+```
+Mao* acao(pilha *baralho, Mao *jogador,int numero){ // Se o numero for 43 ou 77  entra na funcao das cartas "+2" e "+4"
     carta c;
     if (numero == 43){
     for (int i = 0 ; i < 2 ; i++){
@@ -191,7 +198,8 @@ Função responsável para verificar a jogada, caso o jogador tenha jogado a car
 ### Exemplo no cógido:
 
 Progama:
-```Mao* retiracarta (Mao* jogador, carta c, pilha *mesa, pilha *baralho,int cor, int num) {
+```
+Mao* retiracarta (Mao* jogador, carta c, pilha *mesa, pilha *baralho,int cor, int num) {
  
  Mao* ant = NULL;
  Mao* p = jogador;
@@ -248,7 +256,8 @@ Ela também tira o elemento da pilha e coloca na lista.
 ### Exemplo no cógido:
 
 Progama:
-```Mao* criar_mao(pilha *baralho, Mao *jogador) { //tira a carta do baralho e coloca na mao dos jogadores e tira o elemento da pilha e coloca na lista
+```
+Mao* criar_mao(pilha *baralho, Mao *jogador) { //tira a carta do baralho e coloca na mao dos jogadores e tira o elemento da pilha e coloca na lista
     carta c;
     jogador = inicializa();
        
