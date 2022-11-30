@@ -1,0 +1,12 @@
+### Class carta, armazenamento das cartas 
++ class carta{
+    public:
+    int numero;
+    int cor;
+}
+### Class pilha, armazenamento da pilha do baralho
++ class pilha{  
+    public:
+    int topo;
+    carta c[MAX];
+}
