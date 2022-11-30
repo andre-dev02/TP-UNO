@@ -77,7 +77,7 @@ int pilha_vazia(pilha *p){ // Verificar se a pilha ta vazia
 
 ## Pilha_cheia
 
-Função responsável para verificar se a pilha está cheia ou não.
+Função responsável por verificar se a pilha está cheia ou não.
 
 #
  
@@ -96,7 +96,7 @@ int pilha_cheia(pilha *p){  // Verificar se a pilha ta cheia
 
 ## Push
 
-Função responsável para inserir no topo da pilha um novo elemento.
+Função responsável por inserir no topo da pilha um novo elemento.
 
 #
  
@@ -117,7 +117,7 @@ int push(pilha *p, carta c){ // insere um novo elemento no inicio da pilha
 
 ## Pop
 
-Função responsável para remover um elemento do início da pilha.
+Função responsável por remover um elemento do início da pilha.
 
 #
  
@@ -137,7 +137,7 @@ int pop(pilha *p, carta *c){ // Remove um elemento do inicio da pilha
 ```
 ## Altura_pilha
 
-Função responsável para retornar o valor da altura da pilha.
+Função responsável por retornar o valor da altura da pilha.
 
 #
  
@@ -153,7 +153,7 @@ int altura_pilha(pilha *p){ // Imprime a quatidade de cartas e retorna esse valo
 
 ## Carta_mesa
 
-Função responsável para remover uma carta do baralho e colocar na mesa.
+Função responsável por remover uma carta do baralho e colocar na mesa.
 
 #
  
@@ -171,7 +171,7 @@ void carta_mesa (pilha *mesa, pilha *baralho){ // remove determinada carta do ba
 
 ## Imprime_pilha
 
-Função responsável para imprimir a pilha de cartas.
+Função responsável por imprimir a pilha de cartas.
 
 #
  
@@ -209,7 +209,7 @@ void imprime_pilha(pilha p){
 
 ## Existe
 
-Função booleana responsável para informar se a carta foi ou não inserida no baralho.
+Função booleana responsável por informar se a carta foi ou não inserida no baralho.
 
 #
  
@@ -228,7 +228,7 @@ bool Existe ( int valores[] , int tam , int valor ){  // se a carta foi inserida
 
 ## GerarNumerosAmarelo
 
-Função responsável para gerar cartas amarelas de forma aleatória.
+Função responsável por gerar cartas amarelas de forma aleatória.
 
 #
  
@@ -255,7 +255,7 @@ void GerarNumerosAmarelo (int numerosAmarelo[], int quantNumeros , int limiteAma
 
 ## GerarNumerosAzul
 
-Função responsável para gerar cartas azuis de forma aleatória.
+Função responsável por gerar cartas azuis de forma aleatória.
 
 #
  
@@ -282,7 +282,7 @@ void GerarNumerosAzul (int numerosAzul[], int quantNumeros , int limiteAzul ){
 
 ## GerarNumerosVermelho
 
-Função responsável para gerar cartas vermelhas de forma aleatória.
+Função responsável por gerar cartas vermelhas de forma aleatória.
 
 #
  
@@ -310,7 +310,7 @@ void GerarNumerosVermelho (int numerosVermelho[], int quantNumeros , int limiteV
 
 ## GerarNumerosVerde
 
-Função responsável para gerar cartas verdes de forma aleatória.
+Função responsável por gerar cartas verdes de forma aleatória.
 
 #
  
