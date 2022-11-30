@@ -18,7 +18,7 @@ setlocale(LC_ALL,"");
     cout << setw(150) << "-------------------------------------- H E L P -----------------------------------------------" << endl << endl;
  
     cout << setw(150) << "Esta é uma versão adaptada de um dos jogos mais famosos de todos e tempos.                    " << endl;
-    cout << setw(150) << "Nosso jogo promete diversão dois oponentes que se enfrentarão                                 " << endl;
+    cout << setw(150) << "Nosso jogo promete diversão para dois oponentes que se enfrentarão                            " << endl;
     cout << setw(150) << "até que um dos deles fique sem nenhuma carta, garantindo assim a vitória.                     " << endl;
     cout << setw(150) << "Cada cor é representada por um número de 0 a 4 e o valor das cartas é representado            " << endl;
     cout << setw(150) << "por seus respectivos números ou por sua letra inicial, no caso das cartas especiais           " << endl << endl;
