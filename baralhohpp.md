@@ -58,7 +58,7 @@ void inicializa_pilha(pilha *p){ // inicializa a pilha
 
 ## Pilha_vazia
 
-Função responsável para verificar se a pilha está vazia ou não.
+Função responsável por verificar se a pilha está vazia ou não.
 
 #
  
