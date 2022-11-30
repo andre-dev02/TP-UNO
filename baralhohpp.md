@@ -1,4 +1,4 @@
-Este arquivo contém todo o código usado em baralho hpp, destrinchado e detalhado.
+Este arquivo contém todo o código usado em baralho.hpp destrinchado.
 
 - [Classes](#classes)
 - [Inicializa_pilha](#inicializa_pilha)
