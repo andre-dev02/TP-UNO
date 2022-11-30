@@ -3,7 +3,7 @@ Este arquivo contém todo o código usado em menu.hpp destrinchado.
 - [Menu_De_Ajuda](#menu_de_ajuda)
 
 O menu foi criado com a função de ajudar o usuário e apresentar uma interface interativa.
-Nele contém as informações básicas das cartas e das cores, além de instruções para pegar uma carta do monte
+Nele contém as informações básicas das cartas e das cores, além de instruções para pegar uma carta do monte.
 
 #
  
