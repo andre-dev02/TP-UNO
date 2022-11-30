@@ -10,7 +10,8 @@ Nele contém as informações básicas das cartas e das cores, além de instruç
 ### Exemplo no cógido:
 
 Progama:
-```void ajuda (int opc){
+```
+void ajuda (int opc){
  
 setlocale(LC_ALL,"");
     cout << endl << endl << endl << endl << endl << endl << endl << endl << endl;
