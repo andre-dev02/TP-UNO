@@ -104,7 +104,7 @@ cout << endl << endl << "ESCOLHA UMA CARTA PARA JOGAR: ";
 ```
 #
 
-Em terceiro lugar, é impresso as mesmas coisas só que agora para o jogador 2.
+E por fim, é impresso as mesmas coisas só que agora para o jogador 2.
 
 #
  
