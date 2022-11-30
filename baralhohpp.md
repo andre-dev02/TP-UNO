@@ -9,11 +9,11 @@ Este arquivo contém todo o código usado em baralho.hpp destrinchado.
 - [Altura_pilha](#altura_pilha)
 - [Carta_mesa](#carta_mesa)
 - [Imprime_pilha](#imprime_pilha)
-- [Existe](#Existe)
-- [GerarNumerosAmarelo](#GerarNumerosAmarelo)
-- [GerarNumerosAzul](#GerarNumerosAzul)
-- [GerarNumerosVermelho](#gerarNumerosVermelho)
-- [GerarNumerosVerde](#gerarNumerosVerde)
+- [Existe](#existe)
+- [GerarNumerosAmarelo](#gerarnumerosamarelo)
+- [GerarNumerosAzul](#gerarnumerosazul)
+- [GerarNumerosVermelho](#gerarnumerosvermelho)
+- [GerarNumerosVerde](#gerarnumerosverde)
 - [Criar_baralho](#criar_baralho)
 
 ---
@@ -44,6 +44,10 @@ class pilha{
 
 Função que tem como base inicializar a pilha de cartas.
 
+#
+ 
+### Exemplo no cógido:
+
 Programa:
 ```void inicializa_pilha(pilha *p){ // inicializa a pilha
     p->topo = -1;
@@ -53,6 +57,10 @@ Programa:
 ## Pilha_vazia
 
 Função responsável para verificar se a pilha está vazia ou não.
+
+#
+ 
+### Exemplo no cógido:
 
 Progama:
 ```int pilha_vazia(pilha *p){ // Verificar se a pilha ta vazia
@@ -68,6 +76,10 @@ Progama:
 
 Função responsável para verificar se a pilha está cheia ou não.
 
+#
+ 
+### Exemplo no cógido:
+
 Progama:
 ```int pilha_cheia(pilha *p){  // Verificar se a pilha ta cheia
     if(p->topo == MAX-1){
@@ -81,6 +93,10 @@ Progama:
 ## Push
 
 Função responsável para inserir no topo da pilha um novo elemento.
+
+#
+ 
+### Exemplo no cógido:
 
 Progama:
 ```int push(pilha *p, carta c){ // insere um novo elemento no inicio da pilha
@@ -98,6 +114,10 @@ Progama:
 
 Função responsável para remover um elemento do início da pilha.
 
+#
+ 
+### Exemplo no cógido:
+
 Progama: 
 ```int pop(pilha *p, carta *c){ // Remove um elemento do inicio da pilha
     if(pilha_vazia(p)){
@@ -113,6 +133,10 @@ Progama:
 
 Função responsável para retornar o valor da altura da pilha.
 
+#
+ 
+### Exemplo no cógido:
+
 Progama:
 ```int altura_pilha(pilha *p){ // Imprime a quatidade de cartas e retorna esse valor
     cout << p->topo+1;
@@ -123,6 +147,10 @@ Progama:
 ## Carta_mesa
 
 Função responsável para remover uma carta do baralho e colocar na mesa.
+
+#
+ 
+### Exemplo no cógido:
 
 Progama:
 ```void carta_mesa (pilha *mesa, pilha *baralho){ // remove determinada carta do baralho e colocar na mesa
@@ -136,6 +164,10 @@ Progama:
 ## Imprime_pilha
 
 Função responsável para imprimir a pilha de cartas.
+
+#
+ 
+### Exemplo no cógido:
 
 Progama:
 ```void imprime_pilha(pilha p){
@@ -170,6 +202,10 @@ Progama:
 
 Função booleana responsável para informar se a carta foi ou não inserida no baralho.
 
+#
+ 
+### Exemplo no cógido:
+
 Progama:
 ```bool Existe ( int valores[] , int tam , int valor ){  // se a carta foi inserida no baralho vai retornar true, caso contrario retorna false
     for ( int i = 0 ; i < tam ; i++){
@@ -183,6 +219,10 @@ Progama:
 ## GerarNumerosAmarelo
 
 Função responsável para gerar cartas amarelas de forma aleatória.
+
+#
+ 
+### Exemplo no cógido:
 
 Progama:
 ```void GerarNumerosAmarelo (int numerosAmarelo[], int quantNumeros , int limiteAmarelo ){    
@@ -206,6 +246,10 @@ Progama:
 
 Função responsável para gerar cartas azuis de forma aleatória.
 
+#
+ 
+### Exemplo no cógido:
+
 Progama:
 ```void GerarNumerosAzul (int numerosAzul[], int quantNumeros , int limiteAzul ){
     int vAzul;
@@ -227,6 +271,10 @@ Progama:
 ## GerarNumerosVermelho
 
 Função responsável para gerar cartas vermelhas de forma aleatória.
+
+#
+ 
+### Exemplo no cógido:
 
 Progama:
 ```void GerarNumerosVermelho (int numerosVermelho[], int quantNumeros , int limiteVermelho ){
@@ -250,6 +298,10 @@ Progama:
 ## GerarNumerosVerde
 
 Função responsável para gerar cartas verdes de forma aleatória.
+
+#
+ 
+### Exemplo no cógido:
 
 Progama:
 ```
@@ -277,6 +329,10 @@ Função longa que tem como base criar o baralho.
 
 Vamos dividí-la em partes, para facilitar a compreensão.
 
+#
+ 
+### Exemplo no cógido:
+
 + Parte inicial da função:
 ```int criar_baralho (pilha *baralho) {
     carta c;
@@ -293,6 +349,11 @@ Vamos dividí-la em partes, para facilitar a compreensão.
     srand(time(NULL));
 ```
 + Agora é a parte responsável para gerar as cartas amarelas da função:
+
+#
+ 
+### Exemplo no cógido:
+
 ```/*  --------------------------------------------------------------Amarelo-------------------------------------------------------------- */
  
 for ( int w = 0 ; w < 2 ; w++){ // Insere a carta de Bloqueio na pilha especial
@@ -329,6 +390,11 @@ for ( int i = 0 ; i < 19 ; i++){
 //a funçao sera a mesma para as cores azul, vermelho e verde
 ```
 + Agora é a parte responsável para gerar as cartas azuis da função:
+
+#
+ 
+### Exemplo no cógido:
+
 ```/*  --------------------------------------------------------------Azul--------------------------------------------------------------    */  
  
 for ( int w = 0 ; w < 2 ; w++){
@@ -364,6 +430,11 @@ for ( int w = 0 ; w < 2 ; w++){
 }
 ```
 + Agora é a parte responsável para gerar as cartas vermelhas da função:
+
+#
+ 
+### Exemplo no cógido:
+
 ```/*  --------------------------------------------------------------Vermelho--------------------------------------------------------------    */  
  
 for ( int w = 0 ; w < 2 ; w++){
@@ -396,6 +467,11 @@ int numerosVermelho[19];
     }
 ```
 + Agora é a parte responsável para gerar as cartas verdes da função:
+
+#
+ 
+### Exemplo no cógido:
+
 ```/*  --------------------------------------------------------------Verde--------------------------------------------------------------   */  
  
 for ( int w = 0 ; w < 2 ; w++){
@@ -429,6 +505,11 @@ int numerosVerde[19];
     }
 ```
 + Agora é a parte responsável para gerar as cartas pretas da função:
+
+#
+ 
+### Exemplo no cógido:
+
 ```/*  --------------------------------------------------------------Preto--------------------------------------------------------------   */  
 int contW = 4;
 int contM = 4;
@@ -459,6 +540,11 @@ for(int m=0 ; m<8 ; m++){  // insere as carta Troca de cor e +4 aleatoriamente e
 }
 ```
 + Agora são inseridas essas cartas na pilha do baralho:
+
+#
+ 
+### Exemplo no cógido:
+
 ```srand(time(NULL));
 int aux = 0;
 for(int i=0 ; i<108;i++){
