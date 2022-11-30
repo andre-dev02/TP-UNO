@@ -16,6 +16,10 @@ Este arquivo contém todo o código usado em mao.hpp destrinchado, o mao hpp é 
 
 A struct foi utilizada para armazenar as cartas da mão do jogador.
 
+#
+ 
+### Exemplo no cógido:
+
 Progama:
 ```struct mao { //mao do jogador
     carta c;
@@ -29,6 +33,10 @@ typedef struct mao Mao;
 
 Função responsável por inicializar a mão do jogador.
 
+#
+ 
+### Exemplo no cógido:
+
 Progama:
 ```Mao* inicializa (void){
  return NULL;
@@ -39,6 +47,10 @@ Progama:
 
 Função responsável por inserir a carta na mão. Utilizamos malloc, pois por algum motivo o "new" 
 não funcionava no compilador que estávamos usando, ele deixava um "leak" na memória.
+
+#
+ 
+### Exemplo no cógido:
 
 Progama:
 ```Mao* insere (Mao* l, carta c){ // insere a carta na mao "
@@ -53,6 +65,10 @@ Progama:
 
 Função responsável para verificar se a mão do jogador está vazia, caso esteja ele vence a partida.
 
+#
+ 
+### Exemplo no cógido:
+
 Progama:
 ```int vazia (Mao* l) {//verifica se a mao ta vazia, se sim o jogador vence a partida
  if (l == NULL) {
@@ -66,6 +82,10 @@ Progama:
 
 Função responsável para mostrar as cartas do jogador. Observação: No TP foi utilizado a tabela ASCII para ser usado os caracteres nas cartas especiais,
 exemplo de como foi a transformação dos caracteres (+, M, R, T, B)
+
+#
+ 
+### Exemplo no cógido:
 
 Progama:
 ```void imprime (Mao* l) { //mostra as cartas do jogador
@@ -97,6 +117,10 @@ Progama:
 
 Função responsável para contar e mostrar na tela quantas cartas o jogador possui.
 Caso esteja com 0 é impresso uma imagem da vitória.
+
+#
+ 
+### Exemplo no cógido:
 
 Progama:
 ```int tamanho(Mao* l, int id) { // Conta e mosta na tela quantas cartas o jogador tem
@@ -132,6 +156,10 @@ Progama:
 Função responsável para acionar o "come 2" e o "come 4", caso o jogador receba uma dessas cartas especiais,
 é retirado do baralho e inserido na mão desse jogador
 
+#
+ 
+### Exemplo no cógido:
+
 Progama:
 ```Mao* acao(pilha *baralho, Mao *jogador,int numero){ // Se o numero for 43 ou 77  entra na funcao das cartas "+2" e "+4"
     carta c;
@@ -157,6 +185,10 @@ Progama:
 
 Função responsável para verificar a jogada, caso o jogador tenha jogado a carta errada
 é informado na tela uma mensagem, ele perde a vez de jogar e a mesa pega a carta de volta
+
+#
+ 
+### Exemplo no cógido:
 
 Progama:
 ```Mao* retiracarta (Mao* jogador, carta c, pilha *mesa, pilha *baralho,int cor, int num) {
@@ -210,6 +242,10 @@ while (p != NULL && (p->c.cor != c.cor ) ) { //verificar o numero
 
 Função responsável por tirar a carta do baralho e colocar na mão dos jogadores.
 Ela também tira o elemento da pilha e coloca na lista.
+
+#
+ 
+### Exemplo no cógido:
 
 Progama:
 ```Mao* criar_mao(pilha *baralho, Mao *jogador) { //tira a carta do baralho e coloca na mao dos jogadores e tira o elemento da pilha e coloca na lista
