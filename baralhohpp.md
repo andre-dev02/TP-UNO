@@ -37,7 +37,7 @@ class carta{
 class pilha{  
     public:
     int topo;
-    carta c[MAX];
+    carta _carta[MAX];
 };
 ```
 
@@ -104,12 +104,12 @@ Função responsável por inserir no topo da pilha um novo elemento.
 
 Progama:
 ```
-int push(pilha *p, carta c){ // insere um novo elemento no inicio da pilha
+int push(pilha *p, carta _carta){ // insere um novo elemento no inicio da pilha
     if(pilha_cheia(p)){
         return 0;
     }else{
         p->topo++;
-        p->c[p->topo] = c;
+        p->_carta[p->topo] = _carta;
         return 1;
     }
 }
@@ -125,11 +125,11 @@ Função responsável por remover um elemento do início da pilha.
 
 Progama: 
 ```
-int pop(pilha *p, carta *c){ // Remove um elemento do inicio da pilha
+int pop(pilha *p, carta *_carta){ // Remove um elemento do inicio da pilha
     if(pilha_vazia(p)){
         return 0;
     }else{
-        *c = p->c[p->topo];
+        *_carta = p->_carta[p->topo];
         p->topo--;
         return 1;
     }
@@ -163,9 +163,9 @@ Progama:
 ```
 void carta_mesa (pilha *mesa, pilha *baralho){ // remove determinada carta do baralho e colocar na mesa
     inicializa_pilha(mesa);
-    carta c;
-    pop(baralho,&c);
-    push(mesa,c);
+    carta _carta;
+    pop(baralho,&_carta);
+    push(mesa,_carta);
 }
 ```
 
@@ -180,27 +180,27 @@ Função responsável por imprimir a pilha de cartas.
 Progama:
 ```
 void imprime_pilha(pilha p){
-    carta c;
+    carta _carta;
     cout << endl;
     while(!pilha_vazia(&p)){
         pop(&p,&c);            
-        if (c.numero == 66) {
-            cout << "Cor = " << c.cor << " Numero = Block" << endl;
+        if (_carta.numero == 66) {
+            cout << "Cor = " << _carta.cor << " Numero = Block" << endl;
         }
-        if (c.numero == 82) {
-            cout << "Cor = " << c.cor << " Numero = Reverse" << endl;
+        if (_carta.numero == 82) {
+            cout << "Cor = " << _carta.cor << " Numero = Reverse" << endl;
         }
-        if (c.numero == 77) {
-            cout << "Cor = " << c.cor << " Numero = +4" << endl;
+        if (_carta.numero == 77) {
+            cout << "Cor = " << _carta.cor << " Numero = +4" << endl;
         }
-        if (c.numero == 43) {
-            cout << "Cor = " << c.cor << " Numero = +2" << endl;
+        if (_carta.numero == 43) {
+            cout << "Cor = " << _carta.cor << " Numero = +2" << endl;
         }
-        if (c.numero == 84 ){
-            cout << "Cor = " << c.cor << " Numero = Troca de cor" << endl;
+        if (_carta.numero == 84 ){
+            cout << "Cor = " << _carta.cor << " Numero = Troca de cor" << endl;
         }
-        if (c.numero < 10) {
-            cout << "Cor = " << c.cor << " Numero = " << c.numero << endl;
+        if (_carta.numero < 10) {
+            cout << "Cor = " << _carta.cor << " Numero = " << _carta.numero << endl;
         }
         }
  
@@ -293,13 +293,13 @@ Progama:
 void GerarNumerosVermelho (int numerosVermelho[], int quantNumeros , int limiteVermelho ){
     int vVermelho;
  
-    for ( int c = 0 ; c < quantNumeros ; c++){
+    for ( int _carta = 0 ; _carta < quantNumeros ; _carta++){
         vVermelho = rand() % limiteVermelho;
-        while (Existe(numerosVermelho,c,vVermelho)) {
+        while (Existe(numerosVermelho,_carta,vVermelho)) {
             vVermelho = rand() % limiteVermelho;
         }
         if ( vVermelho != 10) {
-        numerosVermelho[c] = vVermelho;
+        numerosVermelho[_carta] = vVermelho;
        
     } else {
         c--;
@@ -349,7 +349,7 @@ Vamos dividí-la em partes, para facilitar a compreensão.
 + Parte inicial da função:
 ```
 int criar_baralho (pilha *baralho) {
-    carta c;
+    carta _carta;
     pilha amarelo, azul, vermelho, verde, preto,especiais; // cria as pilhas de cores
  
     inicializa_pilha(&amarelo);
@@ -372,35 +372,35 @@ int criar_baralho (pilha *baralho) {
 /*  --------------------------------------------------------------Amarelo-------------------------------------------------------------- */
  
 for ( int w = 0 ; w < 2 ; w++){ // Insere a carta de Bloqueio na pilha especial
-    c.cor =0;
-    c.numero = 66;
-    push(&especiais, c);
+    _carta.cor =0;
+    _carta.numero = 66;
+    push(&especiais, _carta);
 }
  
 for ( int w = 0 ; w < 2 ; w++){ // insere a carta de Reverse na pilha especial
-    c.cor = 0;
-    c.numero = 82;
-    push(&especiais, c);
+    _carta.cor = 0;
+    _carta.numero = 82;
+    push(&especiais, _carta);
 }
  
 int numerosAmarelo[19];
  
 GerarNumerosAmarelo(numerosAmarelo , 19 , 20);
-c.cor = 0;
+_carta.cor = 0;
 for ( int i = 0 ; i < 19 ; i++){
     if ( numerosAmarelo[i] > 10){ // Se a os numeros forem maiores que 10, subtrai 10 (como ta gerando valores aleatorios entre 0 e 19, sao 2 numeros de cada, pra cada cor, e nao teremos o numero 10 porque no UNO so tem uma carta 0 pra cada cor )
         numerosAmarelo[i] = numerosAmarelo[i] - 10;
-        c.numero = numerosAmarelo[i];                
-        push(&amarelo, c);
+        _carta.numero = numerosAmarelo[i];                
+        push(&amarelo, _carta);
     } else {
-        c.numero = numerosAmarelo[i]; // Se for menor que 10, entra normal
-        push(&amarelo, c);
+        _carta.numero = numerosAmarelo[i]; // Se for menor que 10, entra normal
+        push(&amarelo, _carta);
     }
 }
     for ( int w = 0 ; w < 2 ; w++){ // Insere a carta +2 na pilha especial
-        c.cor = 0;
-        c.numero = 43;
-        push(&especiais, c);
+        _carta.cor = 0;
+        _carta.numero = 43;
+        push(&especiais, _carta);
     }
 //a funçao sera a mesma para as cores azul, vermelho e verde
 ```
@@ -414,35 +414,35 @@ for ( int i = 0 ; i < 19 ; i++){
 /*  --------------------------------------------------------------Azul--------------------------------------------------------------    */  
  
 for ( int w = 0 ; w < 2 ; w++){
-    c.cor = 1;
-    c.numero = 43;
-    push(&especiais, c);
+    _carta.cor = 1;
+    _carta.numero = 43;
+    push(&especiais, _carta);
 }
  
 int numerosAzul[19];
 GerarNumerosAzul(numerosAzul , 19 , 20);
-c.cor = 1;
+_carta.cor = 1;
  
 for ( int i = 0 ; i < 19 ; i++){
     if ( numerosAzul[i] > 10){
         numerosAzul[i] = numerosAzul[i] - 10;  
-        c.numero = numerosAzul[i];
-        push(&azul, c);
+        _carta.numero = numerosAzul[i];
+        push(&azul, _carta);
     } else {
-        c.numero = numerosAzul[i];
-        push(&azul, c);
+        _carta.numero = numerosAzul[i];
+        push(&azul, _carta);
     }
 }
  
 for ( int w = 0 ; w < 2 ; w++){
-    c.cor = 1;
-    c.numero = 66;
-    push(&especiais, c);
+    _carta.cor = 1;
+    _carta.numero = 66;
+    push(&especiais, _carta);
 }
 for ( int w = 0 ; w < 2 ; w++){
-    c.cor = 1;
-    c.numero = 82;
-    push(&especiais, c);
+    _carta.cor = 1;
+    _carta.numero = 82;
+    push(&especiais, _carta);
 }
 ```
 + Agora é a parte responsável para gerar as cartas vermelhas da função:
@@ -455,32 +455,32 @@ for ( int w = 0 ; w < 2 ; w++){
 /*  --------------------------------------------------------------Vermelho--------------------------------------------------------------    */  
  
 for ( int w = 0 ; w < 2 ; w++){
-    c.cor = 2;
-    c.numero = 66;
-    push(&especiais, c);
+    _carta.cor = 2;
+    _carta.numero = 66;
+    push(&especiais, _carta);
 }
     for ( int w = 0 ; w < 2 ; w++){
-        c.cor = 2;
-        c.numero = 82;
-    push(&especiais, c);
+        _carta.cor = 2;
+        _carta.numero = 82;
+    push(&especiais, _carta);
 }
 int numerosVermelho[19];
     GerarNumerosVermelho(numerosVermelho , 19 , 20);
-    c.cor = 2;
+    _carta.cor = 2;
     for ( int i = 0 ; i < 19 ; i++){
         if ( numerosVermelho[i] > 10){
             numerosVermelho[i] = numerosVermelho[i] - 10;  
-            c.numero = numerosVermelho[i];
-            push(&vermelho, c);
+            _carta.numero = numerosVermelho[i];
+            push(&vermelho, _carta);
         } else {
-            c.numero = numerosVermelho[i];
-            push(&vermelho, c);
+            _carta.numero = numerosVermelho[i];
+            push(&vermelho, _carta);
         }
     }
     for ( int w = 0 ; w < 2 ; w++){
-        c.cor = 2;
-        c.numero = 43;
-        push(&especiais, c);
+        _carta.cor = 2;
+        _carta.numero = 43;
+        push(&especiais, _carta);
     }
 ```
 + Agora é a parte responsável para gerar as cartas verdes da função:
@@ -493,33 +493,33 @@ int numerosVermelho[19];
 /*  --------------------------------------------------------------Verde--------------------------------------------------------------   */  
  
 for ( int w = 0 ; w < 2 ; w++){
-    c.cor = 3;
-    c.numero = 43;
-    push(&especiais, c);
+    _carta.cor = 3;
+    _carta.numero = 43;
+    push(&especiais, _carta);
 }
  
 int numerosVerde[19];
     GerarNumerosVerde(numerosVerde , 19 , 20);
-    c.cor = 3;
+    _carta.cor = 3;
     for ( int i = 0 ; i < 19 ; i++){
         if ( numerosVerde[i] > 10){
             numerosVerde[i] = numerosVerde[i] - 10;
-            c.numero = numerosVerde[i];
-            push(&verde, c);
+            _carta.numero = numerosVerde[i];
+            push(&verde, _carta);
         } else {
-            c.numero = numerosVerde[i];
-            push(&verde, c);
+            _carta.numero = numerosVerde[i];
+            push(&verde, _carta);
         }
     }
     for ( int w = 0 ; w < 2 ; w++){
-        c.cor = 3;
-        c.numero = 66;
-        push(&especiais, c);
+        _carta.cor = 3;
+        _carta.numero = 66;
+        push(&especiais, _carta);
     }
     for ( int w = 0 ; w < 2 ; w++){
-        c.cor = 3;
-        c.numero = 82;
-        push(&especiais, c);
+        _carta.cor = 3;
+        _carta.numero = 82;
+        push(&especiais, _carta);
     }
 ```
 + Agora é a parte responsável para gerar as cartas pretas da função:
@@ -538,9 +538,9 @@ for(int m=0 ; m<8 ; m++){  // insere as carta Troca de cor e +4 aleatoriamente e
     auxp = rand()%2;  
     if(auxp == 0){
         if(contW > 0  ){
-            c.cor = 4;
-            c.numero = 84; // carta Troca de cor => carta T  
-            push(&preto,c);
+            _carta.cor = 4;
+            _carta.numero = 84; // carta Troca de cor => carta T  
+            push(&preto,_carta);
             contW--;
         }
     else {
@@ -548,9 +548,9 @@ for(int m=0 ; m<8 ; m++){  // insere as carta Troca de cor e +4 aleatoriamente e
     }
 }else if(auxp == 1){
         if(contM > 0){
-            c.cor = 4;
-            c.numero = 77;  // carta +4 => carta M
-            push(&preto,c);
+            _carta.cor = 4;
+            _carta.numero = 77;  // carta +4 => carta M
+            push(&preto,_carta);
             contM--;
         } else {
         m--;    
@@ -571,48 +571,48 @@ for(int i=0 ; i<108;i++){
     aux = rand()%6;
     if(aux == 0){
         if(!pilha_vazia(&vermelho)){ //quando a pilha vermelha nao ta vazia, retira da pilha e adiciona aleatoriamente na pilha baralho
-            pop(&vermelho,&c);
-            push(baralho,c);
+            pop(&vermelho,&_carta);
+            push(baralho,_carta);
         }
         else {
         i--;
         }   //repetir para as demais cores e cartas especiais
     } else if(aux == 1){
         if(!pilha_vazia(&azul)){
-            pop(&azul,&c);
-            push(baralho,c);
+            pop(&azul,&_carta);
+            push(baralho,_carta);
         }
         else {
         i--;
         }
     } else if(aux == 2){
         if(!pilha_vazia(&amarelo)){
-            pop(&amarelo,&c);
-            push(baralho,c);
+            pop(&amarelo,&_carta);
+            push(baralho,_carta);
         }
         else {
         i--;
         }
     } else if(aux == 3){
         if(!pilha_vazia(&verde)){
-            pop(&verde,&c);
-            push(baralho,c);
+            pop(&verde,&_carta);
+            push(baralho,_carta);
         } else {
         i--;
         }
     }
     if(aux == 4){
         if(!pilha_vazia(&preto)){
-            pop(&preto,&c);
-               push(baralho,c);
+            pop(&preto,&_carta);
+               push(baralho,_carta);
            } else {
         i--;
         }
     }
     if(aux == 5){
         if(!pilha_vazia(&especiais)){
-            pop(&especiais,&c); // obs.: guarda as especiais de todas as cores
-            push(baralho,c);
+            pop(&especiais,&_carta); // obs.: guarda as especiais de todas as cores
+            push(baralho,_carta);
         } else {
             i--;
         }
