@@ -19,9 +19,11 @@ mao:
 ajuda:
 	@mkdir build/ajuda/
 	$(CC) $(CFLAGS) -c src/ajuda.hpp -o build/ajuda.o
-
-main: baralho mao ajuda 
-	$(CC) $(CFLAGS) build/baralho.o build/mao.o build/ajuda.o src/main.cpp -o	$(TARGET)
+testes: 
+	@mkdir build/testes/
+	$(CC) $(CFLAGS) -c src/testes.hpp -o build/testes.o
+main: baralho mao ajuda testes
+	$(CC) $(CFLAGS) build/baralho.o build/mao.o build/ajuda.o build/testes.o src/main.cpp -o	$(TARGET)
 
 clean:
 	$(RM) -r $(BUILD)/* $(TARGET
