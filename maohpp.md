@@ -23,7 +23,7 @@ A struct foi utilizada para armazenar as cartas da mão do jogador.
 Progama:
 ```
 struct mao { //mao do jogador
-    carta c;
+    carta _carta;
     struct mao* prox;
 };
 typedef struct mao Mao;
@@ -56,9 +56,9 @@ não funcionava no compilador que estávamos usando, ele deixava um "leak" na me
 
 Progama:
 ```
-Mao* insere (Mao* l, carta c){ // insere a carta na mao "
+Mao* insere (Mao* l, carta _carta){ // insere a carta na mao "
  Mao* novo = (Mao*) malloc(sizeof(Mao));
- novo->c = c;
+ novo->_carta = _carta;
  novo->prox = l;
  return novo;
 }
@@ -96,23 +96,23 @@ Progama:
 void imprime (Mao* l) { //mostra as cartas do jogador
  Mao* p;
  for (p = l; p != NULL; p = p->prox) {
-        if (p->c.numero == 66) {
-            cout << "Cor = " << p->c.cor << " Numero = Block" << endl;
+        if (p->_carta.numero == 66) {
+            cout << "Cor = " << p->_carta.cor << " Numero = Block" << endl;
         }
-        if (p->c.numero == 82) {
-            cout << "Cor = " << p->c.cor << " Numero = Reverse" << endl;
+        if (p->_carta.numero == 82) {
+            cout << "Cor = " << p->_carta.cor << " Numero = Reverse" << endl;
         }
-        if (p->c.numero == 77) {
-            cout << "Cor = " << p->c.cor << " Numero = +4" << endl;
+        if (p->_carta.numero == 77) {
+            cout << "Cor = " << p->_carta.cor << " Numero = +4" << endl;
         }
-        if (p->c.numero == 43) {
-            cout << "Cor = " << p->c.cor << " Numero = +2" << endl;
+        if (p->_carta.numero == 43) {
+            cout << "Cor = " << p->_carta.cor << " Numero = +2" << endl;
         }
-        if (p->c.numero == 84) {
-            cout << "Cor = " << p->c.cor << " Numero = Troca de cor" << endl;  
+        if (p->_carta.numero == 84) {
+            cout << "Cor = " << p->_carta.cor << " Numero = Troca de cor" << endl;  
         }
-        if (p->c.numero < 10) {
-            cout << "Cor = " << p->c.cor << " Numero = " << p->c.numero << endl;
+        if (p->_carta.numero < 10) {
+            cout << "Cor = " << p->_carta.cor << " Numero = " << p->_carta.numero << endl;
         }
         }
 }
@@ -169,18 +169,18 @@ Função responsável por acionar o "come 2" e o "come 4", caso o jogador receba
 Progama:
 ```
 Mao* acao(pilha *baralho, Mao *jogador,int numero){ // Se o numero for 43 ou 77  entra na funcao das cartas "+2" e "+4"
-    carta c;
+    carta _carta;
     if (numero == 43){
     for (int i = 0 ; i < 2 ; i++){
-    pop(baralho,&c);
-    jogador = insere(jogador ,c);
+    pop(baralho,&_carta);
+    jogador = insere(jogador ,_carta);
         }
     }
    
     if (numero == 77){
     for (int i = 0 ; i < 4 ; i++){
-    pop(baralho,&c);
-    jogador = insere(jogador ,c);
+    pop(baralho,&_carta);
+    jogador = insere(jogador ,_carta);
         }
     }
    
@@ -199,37 +199,37 @@ Função responsável por verificar a jogada, caso o jogador tenha jogado a cart
 
 Progama:
 ```
-Mao* retiracarta (Mao* jogador, carta c, pilha *mesa, pilha *baralho,int cor, int num) {
+Mao* retiracarta (Mao* jogador, carta _carta, pilha *mesa, pilha *baralho,int cor, int num) {
  
  Mao* ant = NULL;
  Mao* p = jogador;
  
  
- while (p != NULL && (p->c.numero != c.numero)  ) { //verificar a cor
+ while (p != NULL && (p->_carta.numero != _carta.numero)  ) { //verificar a cor
  ant = p;
  p = p->prox;
 }
  
  
-while (p != NULL && (p->c.cor != c.cor ) ) { //verificar o numero        
+while (p != NULL && (p->_carta.cor != _carta.cor ) ) { //verificar o numero        
  ant = p;
  p = p->prox;
 }
  
  
-        pop(mesa,&c); //verifica as cartas da mesa
-    if(p->c.cor != c.cor && p->c.numero != c.numero ){  
-        push(mesa,c);
+        pop(mesa,&_carta); //verifica as cartas da mesa
+    if(p->_carta.cor != _carta.cor && p->_carta.numero != _carta.numero ){  
+        push(mesa,_carta);
         cout << "Nao tente roubar jogue somente a carta certa!" << endl << endl;
-        pop(baralho,&c);
-        jogador = insere(jogador,c);
+        pop(baralho,&_carta);
+        jogador = insere(jogador,_carta);
         Sleep(3000);
      return jogador;
    
     } else { //se o jogador joga a carta certa, esta eh inserida na pilha
-    c.cor = cor;
-    c.numero = num;
-    push(mesa,c);
+    _carta.cor = cor;
+    _carta.numero = num;
+    push(mesa,_carta);
    
  //encontrou o elemento?
  if (p == NULL)
@@ -258,12 +258,12 @@ Ela também tira o elemento da pilha e coloca na lista.
 Progama:
 ```
 Mao* criar_mao(pilha *baralho, Mao *jogador) { //tira a carta do baralho e coloca na mao dos jogadores e tira o elemento da pilha e coloca na lista
-    carta c;
+    carta _carta;
     jogador = inicializa();
        
     for (int i = 0 ; i < 7 ; i++) {
-        pop(baralho,&c);
-        jogador = insere(jogador,c);
+        pop(baralho,&_carta);
+        jogador = insere(jogador,_carta);
     }  
    
     return jogador;
