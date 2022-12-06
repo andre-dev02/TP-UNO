@@ -128,6 +128,7 @@ while (p != NULL && (p->_carta.cor != _carta.cor ) ) { //verificar o numero
     if(p->_carta.cor != _carta.cor && p->_carta.numero != _carta.numero ){  //se o jogador joga a carta errada recebe essa mensagem
         push(mesa,_carta);
         throw invalid_argument("Jogue corretamente a carta! Confira sua cor e numero para jogar");
+        //cout << "Jogue corretamente a carta! Confira sua cor e numero para jogar" << endl << endl;
         pop(baralho,&_carta);
         jogador = insere(jogador,_carta);
         Sleep(3000);
