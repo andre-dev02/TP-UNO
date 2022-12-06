@@ -63,13 +63,7 @@ void jogar (pilha *baralho, pilha *mesa, Mao *jogador1, Mao *jogador2, int vez){
                 num = num - 32; //obter o alfabeto em maiusculo usando a tabela ASCII
                 }
             }
-            if(cor == 5){
-            system ("cls");
-            }
-            else{
-            cout<<"ENTRADA INVALIDA, JOGUE NOVAMENTE"<< endl;
-            cin >> cor >> num;
-            }
+            
             system ("cls");
             }
  

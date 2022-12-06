@@ -125,11 +125,9 @@ while (p != NULL && (p->_carta.cor != _carta.cor ) ) { //verificar o numero
  
  
         pop(mesa,&_carta); //verifica as cartas da mesa
- try{
     if(p->_carta.cor != _carta.cor && p->_carta.numero != _carta.numero ){  //se o jogador joga a carta errada recebe essa mensagem
         push(mesa,_carta);
-        throw invalid_argument("");
-        //cout << "Jogue corretamente a carta! Confira sua cor e numero para jogar" << endl << endl;
+        cout << "Jogue corretamente a carta! Confira sua cor e numero para jogar" << endl << endl;
         pop(baralho,&_carta);
         jogador = insere(jogador,_carta);
         Sleep(3000);
@@ -139,10 +137,6 @@ while (p != NULL && (p->_carta.cor != _carta.cor ) ) { //verificar o numero
     _carta.cor = cor;
     _carta.numero = num;
     push(mesa,_carta);
-     
-    }catch(invalid_argument &e){
-     cout << "Jogue corretamente a carta! Confira sua cor e numero para jogar" << endl << endl;
-    }
    
 
  if (p == NULL)
